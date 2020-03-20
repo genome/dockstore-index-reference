@@ -10,7 +10,7 @@ task Index {
     Int disk_size = ceil(ref_size) * 2 + 20
 
     command {
-        /opt/samtools/bin/samtools index ~{fasta}
+        samtools faidx ~{fasta}
     }
 
     output {
@@ -18,7 +18,7 @@ task Index {
     }
 
     runtime {
-        docker: "mgibio/samtools-cwl:1.0.0"
+        docker: "us.gcr.io/broad-gotc-prod/gotc-in-the-cloud-samtools:0.0.1-1523561994"
         memory: "4 GiB"
         disks: "local-disk " + disk_size + " HDD"
         preemptible: preemptible_tries
