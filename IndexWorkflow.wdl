@@ -31,7 +31,7 @@ workflow IndexWorkflow {
         Int preemptible_tries
     }
 
-    call index { 
+    call Index { 
       input: 
         fasta=fasta, 
         preemptible_tries=preemptible_tries
