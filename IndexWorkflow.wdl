@@ -10,7 +10,7 @@ task Index {
     Int disk_size = ceil(ref_size) * 2 + 20
 
     command {
-        samtools faidx ~{fasta}
+        /usr/local/bin/samtools faidx ~{fasta}
     }
 
     output {
